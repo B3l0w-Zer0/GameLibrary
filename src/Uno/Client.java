@@ -30,7 +30,7 @@ public class Client {
         Spieler.erstelleSpieler("Karl-Heinz", 3);
         Spieler.erstelleSpieler("Tim", 4);
         //2. Kartenausteilen
-        Spieler.austeilen(deck, 7, 4);
+        Spieler.austeilen(deck, 7);
 
 
     }
