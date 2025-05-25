@@ -9,7 +9,7 @@ public class Spieler {
     public int ablegenZaehler = 0;
     ArrayList<Karten> hand;
     public static ArrayList<Spieler> alleSpieler = new ArrayList<>();
-    public Spieler aktuellSpieler = alleSpieler.getFirst();
+    public static Spieler aktuellSpieler;
 
 
     public Spieler(String name, int nummer) {
@@ -23,7 +23,7 @@ public class Spieler {
             for (int i = 0; i < anzahl; i++) {
                 alleSpieler.get(j).hand.add(deck.removeFirst());
             }
-        }
+        } aktuellSpieler = alleSpieler.getFirst();
     }
 
     public static void erstelleSpieler(String name, int nummer) {
@@ -39,7 +39,7 @@ public class Spieler {
         }
         ablegenZaehler++;
     }
-    
+
     public void ziehen(int kartenanzahl) {
         for (int j = 0; j < kartenanzahl; j++) {
             if (Client.deck.isEmpty()) {
@@ -47,10 +47,10 @@ public class Spieler {
                     Client.deck.add(Client.ablage.remove(i));
                 }
                 aktuellSpieler.hand.add(Client.deck.removeFirst());
-                
+
             }
             aktuellSpieler.hand.add(Client.deck.removeFirst());
-            
+
         }
         ziehZaehler++;
     }
@@ -86,15 +86,16 @@ public class Spieler {
         aktuellSpieler = alleSpieler.get(Client.spielerCounter); // ✔ jetzt korrekt
     }
 
-    public void HandPrinter() {
+    public static void HandPrinter() {
         System.out.println(aktuellSpieler.name + " hat folgende Karten: ");
         for (Karten karte : aktuellSpieler.hand) {
             System.out.println(karte);
         }
     }
-    public boolean checkValidCard() {
+
+   // public boolean checkValidCard() {
 
     }
 
     //denke an removeSpieler Methode
-}
+
