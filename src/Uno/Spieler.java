@@ -18,8 +18,8 @@ public class Spieler {
         this.hand = new ArrayList<>();
     }
 
-    public static void austeilen(ArrayList<Karten> deck, int anzahl, int spieleranzahl) {
-        for (int j = 0; j < spieleranzahl; j++) {
+    public static void austeilen(ArrayList<Karten> deck, int anzahl) {
+        for (int j = 0; j < alleSpieler.size(); j++) {
             for (int i = 0; i < anzahl; i++) {
                 alleSpieler.get(j).hand.add(deck.removeFirst());
             }
