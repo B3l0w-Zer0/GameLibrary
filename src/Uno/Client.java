@@ -24,6 +24,7 @@ public class Client {
         for (int i = 0; i < 4; i++) {
             deck.add(new Karten("0", farbe[i]));
         }
+        Collections.shuffle(deck);
         //1. Erstellung aller Spieler die teilnehmen:
         Spieler.erstelleSpieler("Fabio", 1);
         Spieler.erstelleSpieler("Jansen", 2);
@@ -31,6 +32,7 @@ public class Client {
         Spieler.erstelleSpieler("Tim", 4);
         //2. Kartenausteilen
         Spieler.austeilen(deck, 7);
+        Spieler.HandPrinter();
 
 
     }
