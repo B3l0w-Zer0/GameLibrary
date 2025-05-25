@@ -39,11 +39,20 @@ public class Spieler {
         }
         ablegenZaehler++;
     }
-
-    public void ziehen() {
-        aktuellSpieler.hand.add(Client.deck.removeFirst());
+    
+    public void ziehen(int kartenanzahl) {
+        for (int j = 0; j < kartenanzahl; j++) {
+            if (Client.deck.isEmpty()) {
+                for (int i = 0; i < Client.ablage.size(); i++) {
+                    Client.deck.add(Client.ablage.remove(i));
+                }
+                aktuellSpieler.hand.add(Client.deck.removeFirst());
+                
+            }
+            aktuellSpieler.hand.add(Client.deck.removeFirst());
+            
+        }
         ziehZaehler++;
-
     }
 
     public void TurnOver() {
