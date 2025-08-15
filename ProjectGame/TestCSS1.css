@@ -1,0 +1,164 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    position: relative;
+    background-color: gray;
+/*background-image: url('elden-ring-background-pic.jpg');
+  background-size: cover;       /* Makes the image cover the whole screen */
+  /*background-repeat: no-repeat; /* Prevents tiling */
+  /*background-position: center;  /* Centers the image */
+
+}
+
+.enemy-ui {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+}
+
+.player-ui {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-align: left;
+}
+
+.health-bar {
+    width: 150px;
+    height: 20px;
+    background-color: #ccc;
+    border: 1px solid #333;
+    margin-bottom: 10px;
+}
+
+.health-fill {
+    height: 100%;
+    background-color: green;
+    width: 100%;
+}
+
+
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+
+.battle-log {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 315px;
+    height: 115px;
+    overflow-y: auto;
+    border: 1px solid #aaa;
+    background: white;
+    padding: 10px;
+}
+
+
+.player-box {
+    position: absolute;
+    bottom: 10px; 
+    left: 9%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 100px;
+    overflow-y: auto;
+    border: 1px solid #aaa;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.enemy-box {
+    position: absolute;
+    z-index: -1;
+    top: 10px; 
+    left: 91%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 100px;
+    overflow-y: auto;
+    border: 1px solid #aaa;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.bag-ui {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width:150px;
+    height: 200px;
+
+}
+
+.bag-closed {
+    background: green;
+
+/*background-image: url('leather-bag-closed.png');
+  background-size: cover;*/
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+
+}
+
+.bag-open {
+  /*background-image: url('leather-bag-open.png');
+  background-size: cover;*/
+  background:red;
+  width:900px;
+  height: 900px;
+  display: none;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  z-index: 5;
+  
+
+  /*entweder full screen unten oder als window oben. Beides geil irgendwie*/
+  
+  /*position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999; /* Make sure it's on top 
+  background-color:red; /* or any background */
+}
+
+
+.item-list {
+    list-style: none;
+    padding: 20px;
+    display: flex;
+    flex-wrap:wrap;
+    gap: 5px;
+}
+
+.item-list li img {
+  width: 40px;
+  height: 40px;
+}
+
+
+
+
+

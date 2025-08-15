@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GameFighting</title>
+    <link rel="stylesheet" href="TestCSS1.css">
+</head>
+<body>
+<div class="enemy-ui">
+    <p>Enemy HP: </p>
+        <div class="health-bar">
+            <div id="enemy-health" class="health-fill"></div>
+        </div>  
+</div>
+
+
+<div class="player-box"></div>
+
+<div class="enemy-box"></div>
+
+
+<div class="player-ui">
+        <p>Player HP:</p>
+        <div class="health-bar">
+            <div id="player-health" class="health-fill"></div>
+        </div>
+        <div class="buttons">
+            <button onclick="playerAttack()">Attack</button>
+            <button onclick="playerHeal()">Heal</button>
+            <button onclick="playerSpecial()">Special</button>
+        </div>
+</div>
+
+<div class="bag-ui" onClick="toggleBag()">
+    <div class="bag-closed"></div>
+    <div class="bag-open">
+        <ul class="item-list">
+        <li> <img src="bottle.jpg" alt="bottle"></li>
+        <li><img src="sword.jpg" alt="Item 2"></li>
+        </ul>
+    </div>
+</div>
+
+    <div class="battle-log" id="log"></div>
+
+    <script src="Testjs.js"></script>
+    
+</body>
+</html>
