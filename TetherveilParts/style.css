@@ -1,0 +1,322 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  background-color: #070123;
+  font-family: monospace;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+/*Menu*/
+@font-face {
+  font-family: 'Cinzel';
+  src: url('./assets/fonts/Cinzel.ttf') format('truetype');
+}
+.menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  height: 100%;
+  width:100%;
+  padding-top: 20vh;
+  background-image: url('./assets/images/MenuBackground.png');
+  background-size: contain;      /* Bild passt sich dem div an */
+  background-position: center; /* Bild wird zentriert */
+  background-repeat: no-repeat;
+}
+
+.menu-title {
+  font-size: 6rem;
+  margin-bottom: 4vh;
+  font-family: 'Old Norse', serif;
+  color: #ccc;
+  text-shadow: 0 0 6px #000, 0 0 16px #444;
+
+}
+
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  width: 200px;
+}
+
+.menu-button {
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-family: "Cinzel", serif;
+  background-color: #222;
+  color: #eee;
+  border: 3px solid #4d2929;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.menu-button:hover {
+  background-color: #444;
+}
+/*Menu Ende*/
+/*Options*/
+.menu-slider {
+  width: 100%;
+  margin-bottom: 2vh;
+}
+/*Options Ende*/
+/*Escape Options*/
+  #Escape-Options {
+    display: none;
+    position: fixed;     /* immer oben über der Canvas */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 20vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 6rem;
+    font-family: 'Old Norse', serif;
+    color: #ccc;
+    text-shadow: 0 0 6px #000, 0 0 16px #444;
+    z-index: 2000;  /* sicher vor Canvas */
+  }
+
+
+  #KeybindsParts {
+    display: none;
+    position: fixed;  /* damit es über allem liegt */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.85); /* optional, damit Hintergrund sichtbar */
+  }
+
+
+.keybind-option {
+  margin: 10px 0;
+}
+
+.keybind-option span {
+  margin-right: 10px;
+}
+
+#Escape-Options button {
+  padding: 0.5rem 1rem;
+  margin: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  background-color: #222;
+  color: #eee;
+  transition: background 0.2s;
+}
+
+#Escape-Options button:hover {
+  background-color: #444;
+}
+
+/* Keybind Conflict Dialog */
+.dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4000;
+}
+
+.dialog.hidden {
+  display: none;
+}
+
+.dialog-box {
+  background: #222;
+  border: 2px solid #888;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  min-width: 300px;
+}
+
+.dialog-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+/*Escape Options Ende*/
+
+/* NPC Dialog Boxen */
+/* Container am unteren Bildschirmrand */
+#npc-dialog {
+  position: fixed;
+  bottom: 5%; /* Abstand vom unteren Rand */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; /* Breite des Dialogs */
+  max-width: 600px;
+  background-color: rgba(0,0,0,0.9);
+  color: #fff;
+  padding: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+/* Name-Box über dem Dialogtext */
+#npc-name {
+  background-color: rgba(255,255,255,0.1);
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+/* Dialogtext */
+#npc-text {
+  padding: 0.5rem 1rem;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 5px;
+  min-height: 3rem; /* Platz für 1-2 Zeilen */
+  line-height: 1.4;
+}
+
+/* Buttons unten rechts */
+#npc-dialog button {
+  margin-top: 0.5rem;
+  align-self: flex-end; /* Rechtsbündig */
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #444;
+  color: #fff;
+  transition: background-color 0.2s;
+}
+
+#npc-dialog button:hover {
+  background-color: #666;
+}
+
+/* Versteckt */
+#npc-dialog.hidden {
+  display: none;
+}
+
+
+/*Options*/
+.menu-slider {
+  width: 100%;
+  margin-bottom: 2vh;
+}
+
+/*Intro*/
+.intro-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #070123;
+  padding: 2rem;
+  text-align: center;
+}
+
+.intro-text {
+  color: #ccc;
+  font-family: 'Old Norse', serif;
+  font-size: 1.6rem;
+  max-width: 800px;
+  line-height: 1.6;
+  text-shadow: 0 0 6px #000;
+  cursor: pointer;
+  user-select: none;
+}
+/*Intro Ende*/
+/*Schwarbild für MapWechsel*/
+#blackBox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  opacity: 0;
+  display: none;
+  transition: opacity 0.5s ease;
+  z-index: 9999; /* GANZ oben */
+}
+/*Änderung!!!!!!!*/
+
+/*Schwarbild für Mapwechsel Ende*/
+
+canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    display: block;
+
+}
+#game {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*Kampf*/
+#ausweichen-feld {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #222;
+  border: 1px solid #555;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#timer-leiste-hülle {
+  width: 100%;
+  height: 20px;
+  background-color: #444;
+  border: 1px solid #999;
+  margin-top: 10px;
+}
+
+#timer-leiste {
+  width: 100%;
+  height: 100%;
+  background-color: limegreen;
+  transition: width 3s linear;
+}
+/*Kampf Ende*/
