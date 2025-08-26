@@ -295,28 +295,56 @@ canvas{
   align-items: center;
 }
 /*Kampf*/
-#ausweichen-feld {
+
+/*öffnet und schließt bag*/
+.open-bag-btn{
+  position: fixed;
+  display: flex;
+  width: 100px;
+  height: 100px;
+  right: 15px;
+  bottom: 15px;
+  background-color: #944;
+  border: 1px solid #999;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+/*offene Ansicht*/
+.bag-open{
+  position: fixed;
+  display: none;
+  width: 65%;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  background-color: #444;
+  border: 1px solid #999;
+  border-radius: 10px;
+}
+
+/*feld mit kategorien*/
+.bag-categ-rahmen {
+  display: flex;
   margin-top: 20px;
   padding: 10px;
   background-color: #222;
   border: 1px solid #555;
-  width: 300px;
+  width: 100%;
+  height: 10%;
   margin-left: auto;
   margin-right: auto;
 }
 
-#timer-leiste-hülle {
+.bag-Category{
+  display: none;
+  position: absolute;
+  background-color: #242;
+  border: 1px solid #545;
   width: 100%;
-  height: 20px;
-  background-color: #444;
-  border: 1px solid #999;
-  margin-top: 10px;
+  height: 87.5%;
+  bottom: 0;
+  left: 0;
 }
 
-#timer-leiste {
-  width: 100%;
-  height: 100%;
-  background-color: limegreen;
-  transition: width 3s linear;
-}
 /*Kampf Ende*/
