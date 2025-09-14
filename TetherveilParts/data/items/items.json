@@ -1,0 +1,51 @@
+[
+  {
+    "sortingID": "001",
+    "itemID": "potionSmall",
+    "name": "small Potion",
+    "type": "healing",
+    "healAmount": 20,
+    "icon": "assets/images/items/bottle.jpg",
+    "description": "Restores 20 HP"
+  },
+
+  {
+  "sortingID": "002",
+  "itemID": "potionBig",
+  "name": "Big Potion",
+  "type": "healing",
+  "healAmount": 50,
+  "icon": "assets/images/items/bottle.jpg",
+  "description": "Restores 20 HP"
+  },
+
+  {
+    "sortingID": "001",
+    "itemID": "sword",
+    "name": "Sword",
+    "type": "attack",
+    "damage": 30,
+    "icon": "assets/images/items/sword.jpg",
+    "description": "Deals 30 damage"
+  },
+
+  {
+    "sortingID": "002",
+    "itemID": "executionerAxe",
+    "name": "Axe of an Executioner",
+    "type": "attack",
+    "damage": 40,
+    "icon": "assets/images/items/executionerAxe.jpeg",
+    "description": "Deals 60 damage"
+  },
+
+  {
+    "sortingID": "003",
+    "itemID": "swordBig",
+    "name": "Huge Sword",
+    "type": "attack",
+    "damage": 70,
+    "icon": "assets/images/items/sword.jpg",
+    "description": "Deals 70 damage"
+  }
+]

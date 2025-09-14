@@ -1,0 +1,8 @@
+Add new item category into bag:
+- create new categ... div element and classList.add('bag-Category')
+- add the new categor into const allCategories
+- go in categories const and add another text, id and action like the others
+- go in switchCategories (for switching display of different item grids) and add
+    else if(newCateg === (*your added category here*) )
+         typeID = '(type id that you added to your items that ought to be displayed in that grid category)';
+
